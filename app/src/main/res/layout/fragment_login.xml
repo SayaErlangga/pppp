@@ -102,18 +102,19 @@
         android:id="@+id/login_btn"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="89dp"
         android:layout_marginBottom="106dp"
         android:background="@drawable/rounded_button"
         android:text="Login"
-        android:textColor="@color/white"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.272" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -133,9 +134,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:textSize="12sp"
-            android:textColor="#525BFF"/>
+            android:textColor="#525BFF"
+            android:textSize="12sp"/>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

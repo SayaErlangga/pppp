@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TugasPertemuan8P3b"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.tugas8.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

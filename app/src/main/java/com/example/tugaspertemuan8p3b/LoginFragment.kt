@@ -1,15 +1,21 @@
 package com.example.tugaspertemuan8p3b
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
+interface DataPassListenerLogin {
+    fun onDataPassLogin(username: String, password: String)
+}
 /**
  * A simple [Fragment] subclass.
  * Use the [LoginFragment.newInstance] factory method to
@@ -19,12 +25,16 @@ class LoginFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var dataListener: DataPassListenerLogin
 
-    interface OnRegisterButtonClickListener {
-        fun onRegisterButtonClick(username: String, password: String)
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            dataListener = context as DataPassListenerLogin
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$context must implement DataListener")
+        }
     }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,8 +46,19 @@ class LoginFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+        val username = view.findViewById<EditText>(R.id.username)
+        val password = view.findViewById<EditText>(R.id.password)
+        val button = view.findViewById<Button>(R.id.login_btn)
+
+        button.setOnClickListener {
+            val stringUsername = username.text.toString()
+            val stringPassword = password.text.toString()
+
+            dataListener.onDataPassLogin(stringUsername, stringPassword)
+        }
+
+        return view    }
 
     companion object {
         /**
