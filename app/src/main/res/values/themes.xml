@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TugasPertemuan8P3b" parent="Theme.AppCompat.Light">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#525BFF</item>
+    </style>
+
+    <style name="Theme.TugasPertemuan8P3b" parent="Base.Theme.TugasPertemuan8P3b" />
+</resources>
